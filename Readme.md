@@ -23,25 +23,23 @@ Cuando hablamos de **factorización** en un sentido amplio, podemos referirnos a
 ### 1. **Factorización de un número en términos de factores enteros**:
 
 En un sentido más general, cualquier número entero positivo puede ser factorizado en productos de factores enteros. Para 12, como mencionas, los factores enteros de 12 serían:
-$$
-12 = 12 x 1, 6x2, 4x3
-$$
+
+![](img/bp14_04.png)
+
 Es decir, estamos descomponiendo 12 en una variedad de productos de números enteros.
 
 ### 2. **Factorización completa (o trivial)**:
 
 Sin embargo, normalmente se habla de **factorización completa** o **factorización no trivial** cuando estamos buscando factores que no sean simplemente el número mismo (12) ni el 1. Si sólo tomamos las factorizaciones no triviales, entonces las posibles factorizaciones de 12 son:
-$$
-12 = 6 x 2, 
-12 = 4x3
-$$
+
+![](img/bp14-05.png)
 
 ### 3. **Factorización prima**:
 
 Este es el caso más específico, donde buscamos descomponer un número en **factores primos**. La factorización prima de 12 es:
-$$
-12 = 2 x 2 x 3
-$$
+
+![](img/bp14_06.png)
+
 Aquí estamos descomponiendo 12 hasta sus bloques fundamentales, que son los números primos.
 
 ## ¿Cómo encontrar todos los divisores de un número `N` en la **factorización de números enteros y completa**?
@@ -55,12 +53,8 @@ Aquí estamos descomponiendo 12 hasta sus bloques fundamentales, que son los nú
 
    - Probamos todos los números desde `2` hasta la raíz cuadrada entera de `N` para ver si dividen exactamente a `N` (sin dejar residuo).
 
-   - Si encontramos que 
-     $$
-     N\div d= q
-     $$
-     (es decir, `d` es un divisor y `q` es el cociente), entonces `d` y `q` son factores de `N`.
-
+   - Si encontramos que ![](img/bp14_07.png) (es decir, `d` es un divisor y `q` es el cociente), entonces `d` y `q` son factores de `N`.
+   
 3. **Ejemplo con `45`**:
 
    - La raíz cuadrada de `45` es aproximadamente `6.7082`, así que solo necesitamos probar los divisores hasta `6`.
@@ -120,39 +114,25 @@ El algoritmo implica los siguientes pasos principales:
 
 2. **Probar divisores desde 1 hasta la raíz cuadrada entera de N**
 
-   - Este es el paso más importante. El algoritmo itera desde 1 hasta la raíz cuadrada de `N`, es decir:
-     $$
-     1 ... \sqrt{N}
-     $$
-     lo que requiere:
-     $$
-     O\sqrt{N}
-     $$
-     iteraciones.
-
+   - Este es el paso más importante. El algoritmo itera desde 1 hasta la raíz cuadrada de `N`, es decir:![](img/bp14_08.png) lo que requiere:
+     
+     ![](img/bp14_09.png)  iteraciones.
+     
    - En cada iteración, verificamos si `N`es divisible por el divisor actual (`d`), lo cual implica una operación **O`(1)`**  (la división es una operación constante).
-
-   Por lo tanto, este paso tiene complejidad:
-   $$
-   O\sqrt{N}
-   $$
+   
+   Por lo tanto, este paso tiene complejidad: ![](img/bp14_09.png)
+   
+   
 
 3. **Registrar los pares de divisores:**
 
    - Por cada divisor `d`encontrado, el cociente `N/d` se calcula y se guarda. Esto también es una operación **O`(1)`**  por divisor.
 
-   - Como máximo, encontramos la raiz cuadrada entera de `N`de divisores (en pares), por lo que este paso también tiene un costo de
-     $$
-     O\sqrt{N}
-     $$
+   - Como máximo, encontramos la raíz cuadrada entera de `N`de divisores (en pares), por lo que este paso también tiene un costo de ![](img/bp14_09.png).
+   
+   En total, la complejidad temporal del algoritmo es: ![](img/bp14_09.png) porque el cálculo de divisores domina el tiempo de ejecución.
+   
 
-4. 
-
-En total, la complejidad temporal del algoritmo es:
-$$
-O\sqrt{N}
-$$
-Porque el cálculo de divisores domina el tiempo de ejecución.
 
 ## **Análisis Espacial (Big O para el uso de memoria)**
 
@@ -160,30 +140,20 @@ El algoritmo requiere almacenar los divisores encontrados y sus correspondientes
 
 1. **Espacio para los divisores:**
 
-   - En el peor caso, el número total de divisores de un número `N`es aproximadamente 
-     $$
-     O\sqrt{N}
-     $$
-     Esto ocurre porque cada divisor menor que la raiz cuadrada de `N` tiene un par correspondiente mayor que la raiz cuadrada de `N`
-
+   - En el peor caso, el número total de divisores de un número `N`es aproximadamente ![](img/bp14_09.png) Esto ocurre porque cada divisor menor que la raíz cuadrada de `N` tiene un par correspondiente mayor que la raíz cuadrada de `N`
+   
 2. **Variables auxiliares:**
+- El algoritmo utiliza variables para `N`, `d` (el divisor actual), la lista de divisores, y posiblemente otras variables para los resultados. Todas estas requieren espacio constante adicional **(O(1))**.
 
-   - El algoritmo utiliza variables para `N`, `d` (el divisor actual), la lista de divisores, y posiblemente otras variables para los resultados. Todas estas requieren espacio constante adicional **(O(1))**.
+Por lo tanto, la complejidad espacial total del algoritmo es: ![](img/bp14_09.png) principalmente para almacenar los divisores).
 
-Por lo tanto, la complejidad espacial total del algoritmo es:
-$$
-O\sqrt{N}
-$$
-Principalmente para almacenar los divisores).
+
 
 ## Ponemos datos al análisis temporal y espacial del Big O
 
 ### Análisis temporal, número de procesos necesarios
 
-Para calcular los divisores de:
-$$
-N = 4530940
-$$
+Para calcular los divisores de: ![](img/bp14_03.png)
 
 1. **Raíz cuadrada de N**
 
@@ -205,19 +175,11 @@ $$
 
 4. **Número total de operaciones:**
 
-   - En cada iteración, realizamos una división y verificamos divisibilidad. Esto resulta en
-     $$
-     O\sqrt{N}
-     $$
-     Operaciones.
-
+   - En cada iteración, realizamos una división y verificamos divisibilidad. Esto resulta en ![](img/bp14_09.png) operaciones.
+     
    - Cada divisor tiene un complemento, así que el número total de divisores registrados puede llegar a `2 x cantidad de divisores únicos`
 
-​		Para N = 4530940, estos divisores naturales son: 
-$$
-\{{}1,2,4,5,10,20,1132735,2265470,4350940\}
-$$
-​		En total 18 divisores, considerando complementos.
+​		Para N = 4530940, estos divisores naturales son: ![](img/bp14_12.png)en total 18 divisores, considerando complementos.
 
 5. **Número final de operaciones**
 
@@ -225,11 +187,7 @@ $$
 
    - Cálculos de divisores complementarios: ≤ número de divisores naturales.
 
-   - Total: 2129 operaciones dominantes 
-     $$
-     (dependen de \sqrt{N})
-     $$
-     
+   - Total: 2129 operaciones dominantes ![](img/bp14_13.png)
 
 ### Análisis espacial (Uso de la memoria)
 
@@ -264,4 +222,4 @@ Al final hacemos el análisis temporal y espacial bajo la notación **Big O**, p
 
 En el mundo de la informática, entender cómo manipular números y aplicar algoritmos sencillos como este es clave para resolver problemas más complejos.
 
-**¡Feliz programación!**❤️😀
+**Feliz programación!** ❤️😀
