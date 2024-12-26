@@ -22,9 +22,7 @@ Cuando hablamos de **factorización** en un sentido amplio, podemos referirnos a
 
 ### 1. **Factorización de un número en términos de factores enteros**:
 
-En un sentido más general, cualquier número entero positivo puede ser factorizado en productos de factores enteros. Para 12, como mencionas, los factores enteros de 12 serían:
-
-![](img/bp14_04.png)
+En un sentido más general, cualquier número entero positivo puede ser factorizado en productos de factores enteros. Para 12, como mencionas, los factores enteros de 12 serían:![](https://billyclasstimesa.blob.core.windows.net/images/bp14_04.png)
 
 Es decir, estamos descomponiendo 12 en una variedad de productos de números enteros.
 
