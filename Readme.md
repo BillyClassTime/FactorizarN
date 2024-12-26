@@ -32,13 +32,13 @@ Es decir, estamos descomponiendo 12 en una variedad de productos de números ent
 
 Sin embargo, normalmente se habla de **factorización completa** o **factorización no trivial** cuando estamos buscando factores que no sean simplemente el número mismo (12) ni el 1. Si sólo tomamos las factorizaciones no triviales, entonces las posibles factorizaciones de 12 son:
 
-![](img/bp14-05.png)
+![](https://billyclasstimesa.blob.core.windows.net/images/bp14-05.png)
 
 ### 3. **Factorización prima**:
 
 Este es el caso más específico, donde buscamos descomponer un número en **factores primos**. La factorización prima de 12 es:
 
-![](img/bp14_06.png)
+![](https://billyclasstimesa.blob.core.windows.net/images/bp14_06.png)
 
 Aquí estamos descomponiendo 12 hasta sus bloques fundamentales, que son los números primos.
 
@@ -53,7 +53,7 @@ Aquí estamos descomponiendo 12 hasta sus bloques fundamentales, que son los nú
 
    - Probamos todos los números desde `2` hasta la raíz cuadrada entera de `N` para ver si dividen exactamente a `N` (sin dejar residuo).
 
-   - Si encontramos que ![](img/bp14_07.png) (es decir, `d` es un divisor y `q` es el cociente), entonces `d` y `q` son factores de `N`.
+   - Si encontramos que ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_07.png) (es decir, `d` es un divisor y `q` es el cociente), entonces `d` y `q` son factores de `N`.
    
 3. **Ejemplo con `45`**:
 
@@ -114,13 +114,13 @@ El algoritmo implica los siguientes pasos principales:
 
 2. **Probar divisores desde 1 hasta la raíz cuadrada entera de N**
 
-   - Este es el paso más importante. El algoritmo itera desde 1 hasta la raíz cuadrada de `N`, es decir:![](img/bp14_08.png) lo que requiere:
+   - Este es el paso más importante. El algoritmo itera desde 1 hasta la raíz cuadrada de `N`, es decir:![](https://billyclasstimesa.blob.core.windows.net/images/bp14_08.png) lo que requiere:
      
-     ![](img/bp14_09.png)  iteraciones.
+     ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_09.png)  iteraciones.
      
    - En cada iteración, verificamos si `N`es divisible por el divisor actual (`d`), lo cual implica una operación **O`(1)`**  (la división es una operación constante).
    
-   Por lo tanto, este paso tiene complejidad: ![](img/bp14_09.png)
+   Por lo tanto, este paso tiene complejidad: ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_09.png)
    
    
 
@@ -128,9 +128,9 @@ El algoritmo implica los siguientes pasos principales:
 
    - Por cada divisor `d`encontrado, el cociente `N/d` se calcula y se guarda. Esto también es una operación **O`(1)`**  por divisor.
 
-   - Como máximo, encontramos la raíz cuadrada entera de `N`de divisores (en pares), por lo que este paso también tiene un costo de ![](img/bp14_09.png).
+   - Como máximo, encontramos la raíz cuadrada entera de `N`de divisores (en pares), por lo que este paso también tiene un costo de ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_09.png).
    
-   En total, la complejidad temporal del algoritmo es: ![](img/bp14_09.png) porque el cálculo de divisores domina el tiempo de ejecución.
+   En total, la complejidad temporal del algoritmo es: ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_09.png) porque el cálculo de divisores domina el tiempo de ejecución.
    
 
 
@@ -140,12 +140,12 @@ El algoritmo requiere almacenar los divisores encontrados y sus correspondientes
 
 1. **Espacio para los divisores:**
 
-   - En el peor caso, el número total de divisores de un número `N`es aproximadamente ![](img/bp14_09.png) Esto ocurre porque cada divisor menor que la raíz cuadrada de `N` tiene un par correspondiente mayor que la raíz cuadrada de `N`
+   - En el peor caso, el número total de divisores de un número `N`es aproximadamente ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_09.png) Esto ocurre porque cada divisor menor que la raíz cuadrada de `N` tiene un par correspondiente mayor que la raíz cuadrada de `N`
    
 2. **Variables auxiliares:**
 - El algoritmo utiliza variables para `N`, `d` (el divisor actual), la lista de divisores, y posiblemente otras variables para los resultados. Todas estas requieren espacio constante adicional **(O(1))**.
 
-Por lo tanto, la complejidad espacial total del algoritmo es: ![](img/bp14_09.png) principalmente para almacenar los divisores).
+Por lo tanto, la complejidad espacial total del algoritmo es:![](https://billyclasstimesa.blob.core.windows.net/images/bp14_09.png) principalmente para almacenar los divisores).
 
 
 
@@ -153,7 +153,7 @@ Por lo tanto, la complejidad espacial total del algoritmo es: ![](img/bp14_09.pn
 
 ### Análisis temporal, número de procesos necesarios
 
-Para calcular los divisores de: ![](img/bp14_03.png)
+Para calcular los divisores de: ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_03.png)
 
 1. **Raíz cuadrada de N**
 
@@ -175,11 +175,11 @@ Para calcular los divisores de: ![](img/bp14_03.png)
 
 4. **Número total de operaciones:**
 
-   - En cada iteración, realizamos una división y verificamos divisibilidad. Esto resulta en ![](img/bp14_09.png) operaciones.
+   - En cada iteración, realizamos una división y verificamos divisibilidad. Esto resulta en ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_09.png) operaciones.
      
    - Cada divisor tiene un complemento, así que el número total de divisores registrados puede llegar a `2 x cantidad de divisores únicos`
 
-​		Para N = 4530940, estos divisores naturales son: ![](img/bp14_12.png)en total 18 divisores, considerando complementos.
+​		Para N = 4530940, estos divisores naturales son: ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_12.png) en total 18 divisores, considerando complementos.
 
 5. **Número final de operaciones**
 
@@ -187,7 +187,7 @@ Para calcular los divisores de: ![](img/bp14_03.png)
 
    - Cálculos de divisores complementarios: ≤ número de divisores naturales.
 
-   - Total: 2129 operaciones dominantes ![](img/bp14_13.png)
+   - Total: 2129 operaciones dominantes ![](https://billyclasstimesa.blob.core.windows.net/images/bp14_13.png)
 
 ### Análisis espacial (Uso de la memoria)
 
